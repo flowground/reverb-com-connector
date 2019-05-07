@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "conversation_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "body"
+            ],
+            "type": "object"
+        }
+    }
+}

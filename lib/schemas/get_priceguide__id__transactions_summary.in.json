@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "number_of_months": {
+            "required": false,
+            "type": "integer",
+            "default": 3
+        },
+        "condition": {
+            "required": false,
+            "type": "string",
+            "default": "used"
+        }
+    }
+}

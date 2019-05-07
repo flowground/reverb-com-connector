@@ -1,0 +1,293 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "categories": {
+                    "items": {
+                        "properties": {
+                            "uuid": {
+                                "description": "UUID of the category for this listing.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "condition": {
+                    "description": "Condition",
+                    "properties": {
+                        "uuid": {
+                            "description": "Condition UUID",
+                            "enum": [
+                                "fbf35668-96a0-4baa-bcde-ab18d6b1b329",
+                                "6a9dfcad-600b-46c8-9e08-ce6e5057921e",
+                                "98777886-76d0-44c8-865e-bb40e669e934",
+                                "f7a3f48c-972a-44c6-b01a-0cd27488d3f6",
+                                "ae4d9114-1bd7-4ec5-a4ba-6653af5ac84d",
+                                "df268ad1-c462-4ba6-b6db-e007e23922ea",
+                                "ac5b9c1e-dc78-466d-b0b3-7cf712967a48",
+                                "6db7df88-293b-4017-a1c1-cdb5e599fa1a",
+                                "9225283f-60c2-4413-ad18-1f5eba7a856f",
+                                "7c3f45de-2ae0-4c81-8400-fdb6b1d74890"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "uuid"
+                    ],
+                    "type": "object"
+                },
+                "description": {
+                    "description": "Product description. Please keep formatting to a minimum.",
+                    "type": "string"
+                },
+                "exclusive_channel": {
+                    "description": "Currently for users of seller sites only, this allows you to have a listing available only to your seller site by setting this to 'seller_site'",
+                    "enum": [
+                        "seller_site",
+                        "reverb",
+                        "none"
+                    ],
+                    "type": "string"
+                },
+                "finish": {
+                    "description": "Finish, e.g. 'Sunburst'",
+                    "type": "string"
+                },
+                "has_inventory": {
+                    "description": "Set true if selling more than one",
+                    "type": "boolean"
+                },
+                "inventory": {
+                    "description": "Number of items available for sale. Reverb will increment and decrement automatically.",
+                    "type": "integer"
+                },
+                "location": {
+                    "properties": {
+                        "country_code": {
+                            "description": "Ex: US",
+                            "type": "string"
+                        },
+                        "locality": {
+                            "description": "Ex: Chicago",
+                            "type": "string"
+                        },
+                        "region": {
+                            "description": "Ex: IL",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "make": {
+                    "description": "ex: Fender, Gibson",
+                    "type": "string"
+                },
+                "model": {
+                    "description": "ex: Stratocaster, SG",
+                    "type": "string"
+                },
+                "multi_item": {
+                    "description": "Specifies if the listing is a bundle of multiple individual items",
+                    "type": "boolean"
+                },
+                "offers_enabled": {
+                    "description": "Whether the listing accepts negotiated offers (default: true)",
+                    "type": "boolean"
+                },
+                "origin_country_code": {
+                    "description": "Country of origin/manufacture, ISO code (e.g: US)",
+                    "type": "string"
+                },
+                "photos": {
+                    "description": "An array of image URLs. Ex: ['http://my.site.com/image.jpg']",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "preorder_info": {
+                    "description": "Create or update a preorder listing. Requires opt-in. Please contact sales@reverb.com if you would like to activate this feature.",
+                    "properties": {
+                        "lead_time": {
+                            "description": "The amount of time before the item will be ready to ship. When lead_time is submitted it is converted into days and added to the current date to produce `estimated_ship_date` in the response body of the request.",
+                            "type": "integer"
+                        },
+                        "lead_time_unit": {
+                            "description": "The unit of time which lead_time is measured in",
+                            "enum": [
+                                "days",
+                                "weeks"
+                            ],
+                            "type": "string"
+                        },
+                        "ship_date": {
+                            "description": "The date the item will be available to ship. In the response body of the request, `estimated_ship_date`, will be the same as ship_date. Date must be ISO8601 format - e.g: 2015-04-09T10:52:23-00:00.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "lead_time_unit"
+                    ],
+                    "type": "object"
+                },
+                "price": {
+                    "properties": {
+                        "amount": {
+                            "description": "The amount of money being expressed, as a POSIX-compliant decimal number",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "The currency the money will be expressed in",
+                            "enum": [
+                                "USD",
+                                "CAD",
+                                "EUR",
+                                "GBP",
+                                "AUD",
+                                "JPY",
+                                "NZD",
+                                "MXN"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "amount",
+                        "currency"
+                    ],
+                    "type": "object"
+                },
+                "prop_65_warning": {
+                    "description": "If your listing contains chemicals that are required to be reported under California Prop 65, please provide your warning statement. We will add the required 'Warning' label and link to California's information page, so you only need to provide the body of the warning. For more information, see https://www.p65warnings.ca.gov/new-proposition-65-warnings",
+                    "type": "string"
+                },
+                "publish": {
+                    "description": "Publish your listing if draft",
+                    "type": "boolean"
+                },
+                "seller": {
+                    "properties": {
+                        "paypal_email": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "seller_cost": {
+                    "description": "Cost of goods in your currency as a POSIX-compliant decimal number (internal use only, not shown to buyers)",
+                    "type": "string"
+                },
+                "shipping": {
+                    "properties": {
+                        "local": {
+                            "description": "True if you offer local pickup",
+                            "type": "boolean"
+                        },
+                        "rates": {
+                            "description": "List of shipping rates. Set to null to clear rates.",
+                            "items": {
+                                "properties": {
+                                    "rate": {
+                                        "properties": {
+                                            "amount": {
+                                                "description": "The amount of money being expressed, as a POSIX-compliant decimal number",
+                                                "type": "string"
+                                            },
+                                            "currency": {
+                                                "description": "The currency the money will be expressed in",
+                                                "enum": [
+                                                    "USD",
+                                                    "CAD",
+                                                    "EUR",
+                                                    "GBP",
+                                                    "AUD",
+                                                    "JPY",
+                                                    "NZD",
+                                                    "MXN"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "amount",
+                                            "currency"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "region_code": {
+                                        "description": "Country code or subregion/superregion code. Full list of codes at /api/shipping/regions",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "shipping_profile_id": {
+                    "description": "id of a shop's shipping profile",
+                    "type": "string"
+                },
+                "shipping_profile_name": {
+                    "description": "DEPRECATED, please use shipping_profile_id. Name of a shipping profile",
+                    "type": "string"
+                },
+                "sku": {
+                    "description": "Unique identifier for product",
+                    "type": "string"
+                },
+                "sold_as_is": {
+                    "description": "This item is sold As-Is and cannot be returned",
+                    "type": "boolean"
+                },
+                "storage_location": {
+                    "description": "Internal note used by sellers to back reference their catalog system when entering a listing",
+                    "type": "string"
+                },
+                "tax_exempt": {
+                    "description": "Listing is exempt from taxes / VAT",
+                    "type": "boolean"
+                },
+                "title": {
+                    "description": "Title of your listing",
+                    "type": "string"
+                },
+                "upc": {
+                    "description": "Valid UPC code",
+                    "type": "string"
+                },
+                "upc_does_not_apply": {
+                    "description": "True if a brand new product has no UPC code, ie for a handmade or custom item",
+                    "type": "string"
+                },
+                "videos": {
+                    "description": "List of YouTube video urls. Note: ONLY ONE ALLOWED",
+                    "items": {
+                        "properties": {
+                            "link": {
+                                "description": "Valid YouTube url",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "link"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "year": {
+                    "description": "Supports many formats. Ex: 1979, mid-70s, late 90s",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

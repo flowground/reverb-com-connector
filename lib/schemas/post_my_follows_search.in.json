@@ -1,0 +1,173 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "accepts_gift_cards": {
+                    "description": "If true, include only items that accept gift cards",
+                    "type": "boolean"
+                },
+                "accepts_payment_plans": {
+                    "description": "If true, only show items that can be purchased with a payment plan",
+                    "type": "boolean"
+                },
+                "auction_price_max": {
+                    "description": "Maximum current auction price",
+                    "format": "float",
+                    "type": "number"
+                },
+                "category": {
+                    "description": "Category slug from /api/categories",
+                    "type": "string"
+                },
+                "conditions": {
+                    "description": "Condition: all,new,b-stock,used,non-functioning",
+                    "enum": [
+                        "all",
+                        "new",
+                        "b-stock",
+                        "used",
+                        "non-functioning"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "currency": {
+                    "description": "The currency to be used for the price filters",
+                    "enum": [
+                        "USD",
+                        "CAD",
+                        "EUR",
+                        "GBP",
+                        "AUD",
+                        "JPY",
+                        "NZD",
+                        "MXN",
+                        "DKK",
+                        "SEK",
+                        "CHF",
+                        "ARS",
+                        "BRL",
+                        "HKD",
+                        "NOK",
+                        "PHP",
+                        "PLN",
+                        "RUB"
+                    ],
+                    "type": "string"
+                },
+                "decade": {
+                    "description": "Decade: e.g. 1970s, early 70s",
+                    "type": "string"
+                },
+                "exclude_auctions": {
+                    "description": "If true, exclude auctions",
+                    "type": "boolean"
+                },
+                "finish": {
+                    "description": "Visual finish of the item, common for guitars",
+                    "type": "string"
+                },
+                "handmade": {
+                    "description": "Handmade items only",
+                    "type": "boolean"
+                },
+                "item_city": {
+                    "description": "City where item is located",
+                    "type": "string"
+                },
+                "item_country": {
+                    "description": "DEPRECATED - Country code where item is located",
+                    "type": "string"
+                },
+                "item_region": {
+                    "description": "Country code where item is located",
+                    "type": "string"
+                },
+                "item_state": {
+                    "description": "State or region code where item is located",
+                    "type": "string"
+                },
+                "listing_type": {
+                    "description": "Type of listing: auctions,offers",
+                    "enum": [
+                        "auctions",
+                        "offers"
+                    ],
+                    "type": "string"
+                },
+                "make": {
+                    "description": "Make(s)/brand of item (e.g. Fender). Can take a single value or an array.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "model": {
+                    "description": "Model of item (e.g. Stratocaster)",
+                    "type": "string"
+                },
+                "must_not": {
+                    "description": "Search term negation. If you want to exclude a term, add it here",
+                    "type": "string"
+                },
+                "not_ids": {
+                    "description": "Listing ID negation. If you want to exclude a listing, add it here.",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "type": "array"
+                },
+                "preferred_seller": {
+                    "description": "If true, include only items by Reverb Preferred Sellers",
+                    "type": "boolean"
+                },
+                "price_max": {
+                    "description": "Maximum price of search results (USD)",
+                    "format": "float",
+                    "type": "number"
+                },
+                "price_min": {
+                    "description": "Minimum price of search results (USD)",
+                    "format": "float",
+                    "type": "number"
+                },
+                "product_type": {
+                    "description": "Product type slug from /api/categories",
+                    "type": "string"
+                },
+                "query": {
+                    "description": "Search query.",
+                    "type": "string"
+                },
+                "ships_to": {
+                    "description": "Limit search to items that ship to this country code",
+                    "type": "string"
+                },
+                "shop": {
+                    "description": "Slug of shop to search",
+                    "type": "string"
+                },
+                "shop_id": {
+                    "description": "ID of shop to search",
+                    "type": "string"
+                },
+                "watchers_count_min": {
+                    "description": "Minimum number of watchers (used to find popular items)",
+                    "type": "integer"
+                },
+                "year_max": {
+                    "description": "Maximum year of manufacture",
+                    "type": "integer"
+                },
+                "year_min": {
+                    "description": "Minumum year of manufacture",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,2791 @@
+{
+    "title": "reverb",
+    "description": "reverb",
+    "docsUrl": "https://dev.reverb.com/",
+    "url": "https://api.apis.guru/v2/specs/reverb.com/3.0/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.reverb.com/api",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "oauth2": {
+                "label": "oauth2",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "token_uri": "https://reverb.com/oauth/token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_articles": {
+            "main": "./lib/actions/get_articles.js",
+            "title": "get_articles",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_articles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_articles_categories": {
+            "main": "./lib/actions/get_articles_categories.js",
+            "title": "List of all article categories",
+            "description": "List of all article categories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_articles_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories": {
+            "main": "./lib/actions/get_categories.js",
+            "title": "List of supported product categories",
+            "description": "List of supported product categories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories_flat": {
+            "main": "./lib/actions/get_categories_flat.js",
+            "title": "get_categories_flat",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories_flat.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories_taxonomy": {
+            "main": "./lib/actions/get_categories_taxonomy.js",
+            "title": "Full taxonomy tree of categories including middle categories",
+            "description": "Full taxonomy tree of categories including middle categories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories_taxonomy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories__product_type___category_": {
+            "main": "./lib/actions/get_categories__product_type___category_.js",
+            "title": "Get subcategory details",
+            "description": "Get subcategory details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories__product_type___category_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories__uuid_": {
+            "main": "./lib/actions/get_categories__uuid_.js",
+            "title": "Get category details",
+            "description": "Get category details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories__uuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comparison_shopping_pages": {
+            "main": "./lib/actions/get_comparison_shopping_pages.js",
+            "title": "Returns a set of comparison shopping pages based on the current params",
+            "description": "Returns a set of comparison shopping pages based on the current params",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comparison_shopping_pages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comparison_shopping_pages_find": {
+            "main": "./lib/actions/get_comparison_shopping_pages_find.js",
+            "title": "Show comparison shopping page",
+            "description": "Show comparison shopping page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comparison_shopping_pages_find.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comparison_shopping_pages__id_": {
+            "main": "./lib/actions/get_comparison_shopping_pages__id_.js",
+            "title": "get_comparison_shopping_pages__id_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comparison_shopping_pages__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comparison_shopping_pages__id__listings": {
+            "main": "./lib/actions/get_comparison_shopping_pages__id__listings.js",
+            "title": "Return new or used listings for a comparison shopping page",
+            "description": "Return new or used listings for a comparison shopping page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comparison_shopping_pages__id__listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comparison_shopping_pages__id__reviews": {
+            "main": "./lib/actions/get_comparison_shopping_pages__id__reviews.js",
+            "title": "View reviews of a comparison shopping page",
+            "description": "View reviews of a comparison shopping page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comparison_shopping_pages__id__reviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_conversations__conversation_id__offer": {
+            "main": "./lib/actions/post_conversations__conversation_id__offer.js",
+            "title": "Make an offer to the other participant in the conversation",
+            "description": "Make an offer to the other participant in the conversation",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_conversations__conversation_id__offer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_conversations__id__offer": {
+            "main": "./lib/actions/post_conversations__id__offer.js",
+            "title": "Make an offer to the other participant in the conversation",
+            "description": "Make an offer to the other participant in the conversation",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_conversations__id__offer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_countries": {
+            "main": "./lib/actions/get_countries.js",
+            "title": "Retrieve a list of country codes with corresponding subregions",
+            "description": "Retrieve a list of country codes with corresponding subregions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_countries.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_csps": {
+            "main": "./lib/actions/get_csps.js",
+            "title": "Returns a set of comparison shopping pages based on the current params",
+            "description": "Returns a set of comparison shopping pages based on the current params",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_csps.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_csps_categories": {
+            "main": "./lib/actions/get_csps_categories.js",
+            "title": "get_csps_categories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_csps_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_curated_sets__slug_": {
+            "main": "./lib/actions/get_curated_sets__slug_.js",
+            "title": "get_curated_sets__slug_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_curated_sets__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_currencies_display": {
+            "main": "./lib/actions/get_currencies_display.js",
+            "title": "List of supported display currencies for browsing listings",
+            "description": "List of supported display currencies for browsing listings",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_currencies_display.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_currencies_listing": {
+            "main": "./lib/actions/get_currencies_listing.js",
+            "title": "List of supported listing currencies for shops",
+            "description": "List of supported listing currencies for shops",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_currencies_listing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_feedback__feedback_id_": {
+            "main": "./lib/actions/get_feedback__feedback_id_.js",
+            "title": "Feedback details",
+            "description": "Feedback details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_feedback__feedback_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_handpicked__slug_": {
+            "main": "./lib/actions/get_handpicked__slug_.js",
+            "title": "Get results from a handpicked collection",
+            "description": "Get results from a handpicked collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_handpicked__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listing_conditions": {
+            "main": "./lib/actions/get_listing_conditions.js",
+            "title": "List of supported product conditions",
+            "description": "List of supported product conditions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listing_conditions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings": {
+            "main": "./lib/actions/get_listings.js",
+            "title": "Default search of listings includes only used & handmade. Add a filter to view all listings or use the /listings/all endpoint.",
+            "description": "Default search of listings includes only used & handmade. Add a filter to view all listings or use the /listings/all endpoint.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_listings": {
+            "main": "./lib/actions/post_listings.js",
+            "title": "Create a listing",
+            "description": "Create a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings_all": {
+            "main": "./lib/actions/get_listings_all.js",
+            "title": "All listings including used, handmade, and brand new",
+            "description": "All listings including used, handmade, and brand new",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings_all.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings_facets_seller_location": {
+            "main": "./lib/actions/get_listings_facets_seller_location.js",
+            "title": "Individual facets",
+            "description": "Individual facets",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings_facets_seller_location.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__id__negotiation": {
+            "main": "./lib/actions/get_listings__id__negotiation.js",
+            "title": "Returns the latest negotiation for the requesting user given a listing id",
+            "description": "Returns the latest negotiation for the requesting user given a listing id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__id__negotiation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_listings__id__offer": {
+            "main": "./lib/actions/post_listings__id__offer.js",
+            "title": "Make an offer to the seller of a listing",
+            "description": "Make an offer to the seller of a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_listings__id__offer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__listing_id__bump": {
+            "main": "./lib/actions/get_listings__listing_id__bump.js",
+            "title": "View available bump tiers and stats for a listing",
+            "description": "View available bump tiers and stats for a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__listing_id__bump.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_listings__listing_id__bump__budget_type_": {
+            "main": "./lib/actions/post_listings__listing_id__bump__budget_type_.js",
+            "title": "Bump a listing",
+            "description": "Bump a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_listings__listing_id__bump__budget_type_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_listings__listing_id__conversations": {
+            "main": "./lib/actions/post_listings__listing_id__conversations.js",
+            "title": "Start a conversation with a seller",
+            "description": "Start a conversation with a seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_listings__listing_id__conversations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__listing_id__images": {
+            "main": "./lib/actions/get_listings__listing_id__images.js",
+            "title": "View the images associated with a particular listing",
+            "description": "View the images associated with a particular listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__listing_id__images.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_listings__listing_id__images__image_id_": {
+            "main": "./lib/actions/delete_listings__listing_id__images__image_id_.js",
+            "title": "Delete an image from a listing",
+            "description": "Delete an image from a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_listings__listing_id__images__image_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__listing_id__product_bundle": {
+            "main": "./lib/actions/get_listings__listing_id__product_bundle.js",
+            "title": "Find a product bundle attached to a listing",
+            "description": "Find a product bundle attached to a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__listing_id__product_bundle.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__listing_id__sales": {
+            "main": "./lib/actions/get_listings__listing_id__sales.js",
+            "title": "See all sales that include a listing.",
+            "description": "See all sales that include a listing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__listing_id__sales.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_listings__slug_": {
+            "main": "./lib/actions/delete_listings__slug_.js",
+            "title": "Delete a draft listing. Cannot be used on non-drafts.",
+            "description": "Delete a draft listing. Cannot be used on non-drafts.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_listings__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__slug_": {
+            "main": "./lib/actions/get_listings__slug_.js",
+            "title": "Listing details",
+            "description": "Listing details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_listings__slug_": {
+            "main": "./lib/actions/put_listings__slug_.js",
+            "title": "Update a listing",
+            "description": "Update a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_listings__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__slug__edit": {
+            "main": "./lib/actions/get_listings__slug__edit.js",
+            "title": "Edit listing.",
+            "description": "Edit listing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__slug__edit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_listings__slug__flag": {
+            "main": "./lib/actions/post_listings__slug__flag.js",
+            "title": "Flag a listing for inappropriate content or fraud",
+            "description": "Flag a listing for inappropriate content or fraud",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_listings__slug__flag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__slug__reviews": {
+            "main": "./lib/actions/get_listings__slug__reviews.js",
+            "title": "View reviews of a listing",
+            "description": "View reviews of a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__slug__reviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_listings__slug__reviews": {
+            "main": "./lib/actions/post_listings__slug__reviews.js",
+            "title": "Create a review for a listing",
+            "description": "Create a review for a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_listings__slug__reviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_listings__slug__similar_listings": {
+            "main": "./lib/actions/get_listings__slug__similar_listings.js",
+            "title": "Listing details",
+            "description": "Listing details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_listings__slug__similar_listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_account": {
+            "main": "./lib/actions/get_my_account.js",
+            "title": "Get account details",
+            "description": "Get account details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_my_account": {
+            "main": "./lib/actions/put_my_account.js",
+            "title": "Update account details",
+            "description": "Update account details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_my_account.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_addresses": {
+            "main": "./lib/actions/get_my_addresses.js",
+            "title": "See all addresses in your address book",
+            "description": "See all addresses in your address book",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_addresses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_addresses": {
+            "main": "./lib/actions/post_my_addresses.js",
+            "title": "Create a new address in your address book",
+            "description": "Create a new address in your address book",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_addresses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_addresses__address_id_": {
+            "main": "./lib/actions/delete_my_addresses__address_id_.js",
+            "title": "Delete an existing address in your address book",
+            "description": "Delete an existing address in your address book",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_addresses__address_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_my_addresses__address_id_": {
+            "main": "./lib/actions/put_my_addresses__address_id_.js",
+            "title": "Update an existing address in your address book",
+            "description": "Update an existing address in your address book",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_my_addresses__address_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_conversations": {
+            "main": "./lib/actions/get_my_conversations.js",
+            "title": "Get a list of your conversations",
+            "description": "Get a list of your conversations",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_conversations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_conversations": {
+            "main": "./lib/actions/post_my_conversations.js",
+            "title": "Start a conversation",
+            "description": "Start a conversation",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_conversations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_conversations__conversation_id__messages": {
+            "main": "./lib/actions/post_my_conversations__conversation_id__messages.js",
+            "title": "Send a message",
+            "description": "Send a message",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_conversations__conversation_id__messages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_conversations__id_": {
+            "main": "./lib/actions/get_my_conversations__id_.js",
+            "title": "Display conversation details with messages in natural time order (oldest to newest)",
+            "description": "Display conversation details with messages in natural time order (oldest to newest)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_conversations__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_my_conversations__id_": {
+            "main": "./lib/actions/put_my_conversations__id_.js",
+            "title": "Mark a conversation read/unread",
+            "description": "Mark a conversation read/unread",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_my_conversations__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_counts": {
+            "main": "./lib/actions/get_my_counts.js",
+            "title": "Get your actionable status counts",
+            "description": "Get your actionable status counts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_counts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_curated_set_product__product_id_": {
+            "main": "./lib/actions/delete_my_curated_set_product__product_id_.js",
+            "title": "delete_my_curated_set_product__product_id_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_curated_set_product__product_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_curated_set_product__product_id_": {
+            "main": "./lib/actions/post_my_curated_set_product__product_id_.js",
+            "title": "post_my_curated_set_product__product_id_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_curated_set_product__product_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_feed": {
+            "main": "./lib/actions/get_my_feed.js",
+            "title": "Get listings from your feed",
+            "description": "Get listings from your feed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_feed.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_feed_customize": {
+            "main": "./lib/actions/get_my_feed_customize.js",
+            "title": "get your feed customization options",
+            "description": "get your feed customization options",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_feed_customize.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_feed_grid": {
+            "main": "./lib/actions/get_my_feed_grid.js",
+            "title": "get your feed",
+            "description": "get your feed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_feed_grid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_feedback_received": {
+            "main": "./lib/actions/get_my_feedback_received.js",
+            "title": "List of received feedback",
+            "description": "List of received feedback",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_feedback_received.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_feedback_sent": {
+            "main": "./lib/actions/get_my_feedback_sent.js",
+            "title": "List of sent feedback",
+            "description": "List of sent feedback",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_feedback_sent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows": {
+            "main": "./lib/actions/get_my_follows.js",
+            "title": "See what the user is following",
+            "description": "See what the user is following",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_articles": {
+            "main": "./lib/actions/get_my_follows_articles.js",
+            "title": "Returns a user's ArticleCategoryFollows",
+            "description": "Returns a user's ArticleCategoryFollows",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_articles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_articles": {
+            "main": "./lib/actions/post_my_follows_articles.js",
+            "title": "Set a user's ArticleCategoryFollows",
+            "description": "Set a user's ArticleCategoryFollows",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_articles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows_brands__slug_": {
+            "main": "./lib/actions/delete_my_follows_brands__slug_.js",
+            "title": "Unfollow a brand",
+            "description": "Unfollow a brand",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows_brands__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_brands__slug_": {
+            "main": "./lib/actions/get_my_follows_brands__slug_.js",
+            "title": "Follow status for a brand",
+            "description": "Follow status for a brand",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_brands__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_brands__slug_": {
+            "main": "./lib/actions/post_my_follows_brands__slug_.js",
+            "title": "Follow a brand",
+            "description": "Follow a brand",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_brands__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows_categories__category___subcategory_": {
+            "main": "./lib/actions/delete_my_follows_categories__category___subcategory_.js",
+            "title": "Unfollow a subcategory",
+            "description": "Unfollow a subcategory",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows_categories__category___subcategory_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_categories__category___subcategory_": {
+            "main": "./lib/actions/get_my_follows_categories__category___subcategory_.js",
+            "title": "Follow status for a subcategory",
+            "description": "Follow status for a subcategory",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_categories__category___subcategory_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_categories__category___subcategory_": {
+            "main": "./lib/actions/post_my_follows_categories__category___subcategory_.js",
+            "title": "Follow a subcategory",
+            "description": "Follow a subcategory",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_categories__category___subcategory_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows_categories__identifier_": {
+            "main": "./lib/actions/delete_my_follows_categories__identifier_.js",
+            "title": "Unfollow a category",
+            "description": "Unfollow a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows_categories__identifier_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_categories__identifier_": {
+            "main": "./lib/actions/get_my_follows_categories__identifier_.js",
+            "title": "Follow status for a category",
+            "description": "Follow status for a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_categories__identifier_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_categories__identifier_": {
+            "main": "./lib/actions/post_my_follows_categories__identifier_.js",
+            "title": "Follow a category",
+            "description": "Follow a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_categories__identifier_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_categories__uuid_": {
+            "main": "./lib/actions/post_my_follows_categories__uuid_.js",
+            "title": "Follow a category",
+            "description": "Follow a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_categories__uuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows_collections__slug_": {
+            "main": "./lib/actions/delete_my_follows_collections__slug_.js",
+            "title": "Unfollow a collection",
+            "description": "Unfollow a collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows_collections__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_collections__slug_": {
+            "main": "./lib/actions/get_my_follows_collections__slug_.js",
+            "title": "Follow status for a collection",
+            "description": "Follow status for a collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_collections__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_collections__slug_": {
+            "main": "./lib/actions/post_my_follows_collections__slug_.js",
+            "title": "Follow a collection",
+            "description": "Follow a collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_collections__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows_handpicked__slug_": {
+            "main": "./lib/actions/delete_my_follows_handpicked__slug_.js",
+            "title": "Unfollow a handpicked collection",
+            "description": "Unfollow a handpicked collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows_handpicked__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_handpicked__slug_": {
+            "main": "./lib/actions/get_my_follows_handpicked__slug_.js",
+            "title": "Follow status for a handpicked collection",
+            "description": "Follow status for a handpicked collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_handpicked__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_handpicked__slug_": {
+            "main": "./lib/actions/post_my_follows_handpicked__slug_.js",
+            "title": "Follow a handpicked collection",
+            "description": "Follow a handpicked collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_handpicked__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_search": {
+            "main": "./lib/actions/get_my_follows_search.js",
+            "title": "Follow status for a search",
+            "description": "Follow status for a search",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_search": {
+            "main": "./lib/actions/post_my_follows_search.js",
+            "title": "Follow a search",
+            "description": "Follow a search",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows_shops__slug_": {
+            "main": "./lib/actions/delete_my_follows_shops__slug_.js",
+            "title": "Unfollow a shop",
+            "description": "Unfollow a shop",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows_shops__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_follows_shops__slug_": {
+            "main": "./lib/actions/get_my_follows_shops__slug_.js",
+            "title": "Follow status for a shop",
+            "description": "Follow status for a shop",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_follows_shops__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows_shops__slug_": {
+            "main": "./lib/actions/post_my_follows_shops__slug_.js",
+            "title": "Follow a shop",
+            "description": "Follow a shop",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows_shops__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows__follow_id_": {
+            "main": "./lib/actions/delete_my_follows__follow_id_.js",
+            "title": "Delete a follow",
+            "description": "Delete a follow",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows__follow_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_follows__follow_id__alert": {
+            "main": "./lib/actions/delete_my_follows__follow_id__alert.js",
+            "title": "delete_my_follows__follow_id__alert",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_follows__follow_id__alert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_follows__follow_id__alert": {
+            "main": "./lib/actions/post_my_follows__follow_id__alert.js",
+            "title": "post_my_follows__follow_id__alert",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_follows__follow_id__alert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_listings": {
+            "main": "./lib/actions/get_my_listings.js",
+            "title": "Retrieve a list of live listings for the seller. To search all listings specify state=all",
+            "description": "Retrieve a list of live listings for the seller. To search all listings specify state=all",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_listings_drafts": {
+            "main": "./lib/actions/get_my_listings_drafts.js",
+            "title": "Retrieve a list your draft listings",
+            "description": "Retrieve a list your draft listings",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_listings_drafts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_listings_negotiations": {
+            "main": "./lib/actions/get_my_listings_negotiations.js",
+            "title": "Get a list of active negotiations as a seller",
+            "description": "Get a list of active negotiations as a seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_listings_negotiations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_my_listings__slug__state_end": {
+            "main": "./lib/actions/put_my_listings__slug__state_end.js",
+            "title": "End a listing",
+            "description": "End a listing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_my_listings__slug__state_end.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_lists": {
+            "main": "./lib/actions/get_my_lists.js",
+            "title": "Get a list of your lists (wishlist, watch list, etc)",
+            "description": "Get a list of your lists (wishlist, watch list, etc)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_lists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_negotiations_buying": {
+            "main": "./lib/actions/get_my_negotiations_buying.js",
+            "title": "Get a list of active negotiations as a buyer",
+            "description": "Get a list of active negotiations as a buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_negotiations_buying.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_negotiations__id_": {
+            "main": "./lib/actions/get_my_negotiations__id_.js",
+            "title": "Get offer details",
+            "description": "Get offer details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_negotiations__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_negotiations__id__accept": {
+            "main": "./lib/actions/post_my_negotiations__id__accept.js",
+            "title": "Accept an offer",
+            "description": "Accept an offer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_negotiations__id__accept.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_negotiations__id__counter": {
+            "main": "./lib/actions/post_my_negotiations__id__counter.js",
+            "title": "Counter an offer",
+            "description": "Counter an offer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_negotiations__id__counter.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_negotiations__id__decline": {
+            "main": "./lib/actions/post_my_negotiations__id__decline.js",
+            "title": "Decline an offer",
+            "description": "Decline an offer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_negotiations__id__decline.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_awaiting_feedback": {
+            "main": "./lib/actions/get_my_orders_awaiting_feedback.js",
+            "title": "List of orders that need feedback",
+            "description": "List of orders that need feedback",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_awaiting_feedback.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_buying_all": {
+            "main": "./lib/actions/get_my_orders_buying_all.js",
+            "title": "Returns all orders, newest first.",
+            "description": "Returns all orders, newest first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_buying_all.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_buying_by_uuid__uuid_": {
+            "main": "./lib/actions/get_my_orders_buying_by_uuid__uuid_.js",
+            "title": "get_my_orders_buying_by_uuid__uuid_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_buying_by_uuid__uuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_buying_unpaid": {
+            "main": "./lib/actions/get_my_orders_buying_unpaid.js",
+            "title": "Returns unpaid orders, newest first.",
+            "description": "Returns unpaid orders, newest first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_buying_unpaid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_buying__id_": {
+            "main": "./lib/actions/get_my_orders_buying__id_.js",
+            "title": "Returns order details for a buyer",
+            "description": "Returns order details for a buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_buying__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_orders_buying__id__mark_received": {
+            "main": "./lib/actions/post_my_orders_buying__id__mark_received.js",
+            "title": "Marks an order as received by the buyer",
+            "description": "Marks an order as received by the buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_orders_buying__id__mark_received.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_selling_all": {
+            "main": "./lib/actions/get_my_orders_selling_all.js",
+            "title": "Get all seller orders, newest first.",
+            "description": "Get all seller orders, newest first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_selling_all.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_selling_awaiting_shipment": {
+            "main": "./lib/actions/get_my_orders_selling_awaiting_shipment.js",
+            "title": "Get unpaid seller orders, newest first.",
+            "description": "Get unpaid seller orders, newest first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_selling_awaiting_shipment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_selling_buyer_history__buyer_id_": {
+            "main": "./lib/actions/get_my_orders_selling_buyer_history__buyer_id_.js",
+            "title": "See previous orders from buyer",
+            "description": "See previous orders from buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_selling_buyer_history__buyer_id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_selling_by_uuid__uuid_": {
+            "main": "./lib/actions/get_my_orders_selling_by_uuid__uuid_.js",
+            "title": "get_my_orders_selling_by_uuid__uuid_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_selling_by_uuid__uuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_selling_unpaid": {
+            "main": "./lib/actions/get_my_orders_selling_unpaid.js",
+            "title": "Get unpaid seller orders, newest first.",
+            "description": "Get unpaid seller orders, newest first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_selling_unpaid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_orders_selling__id_": {
+            "main": "./lib/actions/get_my_orders_selling__id_.js",
+            "title": "Returns order details for a seller",
+            "description": "Returns order details for a seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_orders_selling__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_orders_selling__id__mark_picked_up": {
+            "main": "./lib/actions/post_my_orders_selling__id__mark_picked_up.js",
+            "title": "Marks an order as picked up",
+            "description": "Marks an order as picked up",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_orders_selling__id__mark_picked_up.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_orders_selling__id__ship": {
+            "main": "./lib/actions/post_my_orders_selling__id__ship.js",
+            "title": "Marks an order as shipped",
+            "description": "Marks an order as shipped",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_orders_selling__id__ship.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_my_orders_selling__order_id__refund_requests": {
+            "main": "./lib/actions/post_my_orders_selling__order_id__refund_requests.js",
+            "title": "Initiate a refund for a sold order",
+            "description": "Initiate a refund for a sold order",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_my_orders_selling__order_id__refund_requests.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_payments_selling": {
+            "main": "./lib/actions/get_my_payments_selling.js",
+            "title": "Get payments",
+            "description": "Get payments",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_payments_selling.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_payments_selling__id_": {
+            "main": "./lib/actions/get_my_payments_selling__id_.js",
+            "title": "Get payment",
+            "description": "Get payment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_payments_selling__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_payouts": {
+            "main": "./lib/actions/get_my_payouts.js",
+            "title": "Get a list of payouts",
+            "description": "Get a list of payouts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_payouts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_payouts__id__line_items": {
+            "main": "./lib/actions/get_my_payouts__id__line_items.js",
+            "title": "Read the line items of a payout",
+            "description": "Read the line items of a payout",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_payouts__id__line_items.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_refund_requests_selling": {
+            "main": "./lib/actions/get_my_refund_requests_selling.js",
+            "title": "Get a list of refund requests as a seller",
+            "description": "Get a list of refund requests as a seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_refund_requests_selling.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_my_refund_requests_selling__id_": {
+            "main": "./lib/actions/put_my_refund_requests_selling__id_.js",
+            "title": "Update a refund request for a sold order",
+            "description": "Update a refund request for a sold order",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_my_refund_requests_selling__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_viewed_listings": {
+            "main": "./lib/actions/get_my_viewed_listings.js",
+            "title": "Get a list of your recently viewed listings.",
+            "description": "Get a list of your recently viewed listings.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_viewed_listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_my_wishlist": {
+            "main": "./lib/actions/get_my_wishlist.js",
+            "title": "Get a list of wishlisted items",
+            "description": "Get a list of wishlisted items",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_my_wishlist.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_my_wishlist__id_": {
+            "main": "./lib/actions/delete_my_wishlist__id_.js",
+            "title": "Remove a listing from your wishlist",
+            "description": "Remove a listing from your wishlist",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_my_wishlist__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_my_wishlist__id_": {
+            "main": "./lib/actions/put_my_wishlist__id_.js",
+            "title": "Add a listing to your wishlist",
+            "description": "Add a listing to your wishlist",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_my_wishlist__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orders__order_id__feedback_buyer": {
+            "main": "./lib/actions/get_orders__order_id__feedback_buyer.js",
+            "title": "Feedback details for an order's buyer",
+            "description": "Feedback details for an order's buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orders__order_id__feedback_buyer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orders__order_id__feedback_buyer": {
+            "main": "./lib/actions/post_orders__order_id__feedback_buyer.js",
+            "title": "Add feedback about an order's buyer",
+            "description": "Add feedback about an order's buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orders__order_id__feedback_buyer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orders__order_id__feedback_seller": {
+            "main": "./lib/actions/get_orders__order_id__feedback_seller.js",
+            "title": "Feedback details for an order's seller",
+            "description": "Feedback details for an order's seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orders__order_id__feedback_seller.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orders__order_id__feedback_seller": {
+            "main": "./lib/actions/post_orders__order_id__feedback_seller.js",
+            "title": "Add feedback about an order's seller",
+            "description": "Add feedback about an order's seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orders__order_id__feedback_seller.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_payment_methods": {
+            "main": "./lib/actions/get_payment_methods.js",
+            "title": "Get list of payment methods",
+            "description": "Get list of payment methods",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_payment_methods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_priceguide__id__transactions_summary": {
+            "main": "./lib/actions/get_priceguide__id__transactions_summary.js",
+            "title": "Get a summary of transactions for a given price guide",
+            "description": "Get a summary of transactions for a given price guide",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_priceguide__id__transactions_summary.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_products_reviews__id_": {
+            "main": "./lib/actions/get_products_reviews__id_.js",
+            "title": "View a review",
+            "description": "View a review",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_products_reviews__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_products_reviews__id_": {
+            "main": "./lib/actions/put_products_reviews__id_.js",
+            "title": "Update a review",
+            "description": "Update a review",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_products_reviews__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_products__slug__reviews": {
+            "main": "./lib/actions/get_products__slug__reviews.js",
+            "title": "View reviews of a comparison shopping page",
+            "description": "View reviews of a comparison shopping page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_products__slug__reviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_products__slug__reviews": {
+            "main": "./lib/actions/post_products__slug__reviews.js",
+            "title": "Create a review for a product",
+            "description": "Create a review for a product",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_products__slug__reviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sales_reverb": {
+            "main": "./lib/actions/get_sales_reverb.js",
+            "title": "View upcoming and live Reverb official sales.",
+            "description": "View upcoming and live Reverb official sales.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sales_reverb.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sales_seller": {
+            "main": "./lib/actions/get_sales_seller.js",
+            "title": "View your created sales.",
+            "description": "View your created sales.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sales_seller.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_sales__sale_id__listings": {
+            "main": "./lib/actions/delete_sales__sale_id__listings.js",
+            "title": "Remove a listing from a sale",
+            "description": "Remove a listing from a sale",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_sales__sale_id__listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_sales__sale_id__listings": {
+            "main": "./lib/actions/post_sales__sale_id__listings.js",
+            "title": "Add listings to a sale",
+            "description": "Add listings to a sale",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_sales__sale_id__listings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sales__slug_": {
+            "main": "./lib/actions/get_sales__slug_.js",
+            "title": "get_sales__slug_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sales__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shipping_providers": {
+            "main": "./lib/actions/get_shipping_providers.js",
+            "title": "List of supported shipping providers",
+            "description": "List of supported shipping providers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shipping_providers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shipping_regions": {
+            "main": "./lib/actions/get_shipping_regions.js",
+            "title": "get_shipping_regions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shipping_regions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shop": {
+            "main": "./lib/actions/get_shop.js",
+            "title": "Get your own shop details",
+            "description": "Get your own shop details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shop.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_shop": {
+            "main": "./lib/actions/put_shop.js",
+            "title": "Update your shop profile",
+            "description": "Update your shop profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_shop.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shop_listing_conditions": {
+            "main": "./lib/actions/get_shop_listing_conditions.js",
+            "title": "List of supported product conditions",
+            "description": "List of supported product conditions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shop_listing_conditions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shop_payment_methods": {
+            "main": "./lib/actions/get_shop_payment_methods.js",
+            "title": "Get accepted payment methods",
+            "description": "Get accepted payment methods",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shop_payment_methods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_shop_vacation": {
+            "main": "./lib/actions/delete_shop_vacation.js",
+            "title": "Disable vacation mode. All listings will be re-enabled.",
+            "description": "Disable vacation mode. All listings will be re-enabled.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_shop_vacation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shop_vacation": {
+            "main": "./lib/actions/get_shop_vacation.js",
+            "title": "Returns shop vacation status",
+            "description": "Returns shop vacation status",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shop_vacation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_shop_vacation": {
+            "main": "./lib/actions/post_shop_vacation.js",
+            "title": "Enable vacation mode. All listings will be unavailable until vacation mode is turned off.",
+            "description": "Enable vacation mode. All listings will be unavailable until vacation mode is turned off.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_shop_vacation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shops__id__storefronts": {
+            "main": "./lib/actions/get_shops__id__storefronts.js",
+            "title": "Get storefront details on a shop.",
+            "description": "Get storefront details on a shop.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shops__id__storefronts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shops__shop_id__shipping_profiles": {
+            "main": "./lib/actions/get_shops__shop_id__shipping_profiles.js",
+            "title": "List of shipping profiles for your shop",
+            "description": "List of shipping profiles for your shop",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shops__shop_id__shipping_profiles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shops__slug_": {
+            "main": "./lib/actions/get_shops__slug_.js",
+            "title": "Get details on a shop.",
+            "description": "Get details on a shop.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shops__slug_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shops__slug__feedback": {
+            "main": "./lib/actions/get_shops__slug__feedback.js",
+            "title": "Get seller's feedback",
+            "description": "Get seller's feedback",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shops__slug__feedback.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shops__slug__feedback_buyer": {
+            "main": "./lib/actions/get_shops__slug__feedback_buyer.js",
+            "title": "Get seller's feedback as a buyer",
+            "description": "Get seller's feedback as a buyer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shops__slug__feedback_buyer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_shops__slug__feedback_seller": {
+            "main": "./lib/actions/get_shops__slug__feedback_seller.js",
+            "title": "Get seller's feedback as a seller",
+            "description": "Get seller's feedback as a seller",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_shops__slug__feedback_seller.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_wants": {
+            "main": "./lib/actions/get_wants.js",
+            "title": "A list of wanted items by the user",
+            "description": "A list of wanted items by the user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_wants.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_wants__id_": {
+            "main": "./lib/actions/delete_wants__id_.js",
+            "title": "Unmark an item wanted.",
+            "description": "Unmark an item wanted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_wants__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_wants__id_": {
+            "main": "./lib/actions/put_wants__id_.js",
+            "title": "Mark an item wanted. Returns 200 on success or 422 on failure.",
+            "description": "Mark an item wanted. Returns 200 on success or 422 on failure.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_wants__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_webhooks_registrations": {
+            "main": "./lib/actions/get_webhooks_registrations.js",
+            "title": "Get webhook registrations",
+            "description": "Get webhook registrations",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_webhooks_registrations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_webhooks_registrations": {
+            "main": "./lib/actions/post_webhooks_registrations.js",
+            "title": "Register a webhook",
+            "description": "Register a webhook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_webhooks_registrations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_webhooks_registrations__id_": {
+            "main": "./lib/actions/delete_webhooks_registrations__id_.js",
+            "title": "Remove a webhook",
+            "description": "Remove a webhook",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_webhooks_registrations__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_webhooks_registrations__id_": {
+            "main": "./lib/actions/get_webhooks_registrations__id_.js",
+            "title": "Get details of a webhook registration",
+            "description": "Get details of a webhook registration",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_webhooks_registrations__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

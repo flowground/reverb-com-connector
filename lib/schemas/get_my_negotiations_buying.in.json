@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "page": {
+            "required": false,
+            "type": "integer",
+            "default": 1
+        },
+        "per_page": {
+            "required": false,
+            "type": "integer",
+            "default": 24
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        }
+    }
+}

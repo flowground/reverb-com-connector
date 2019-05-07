@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "slug": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "reason": {
+                    "description": "The reason this listing is being ended. Valid reasons: [\"not_sold\", \"reverb_sale\"].",
+                    "enum": [
+                        "not_sold",
+                        "reverb_sale"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "reason"
+            ],
+            "type": "object"
+        }
+    }
+}

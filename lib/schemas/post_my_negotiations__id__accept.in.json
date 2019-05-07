@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "message": {
+                    "description": "Message to include with accepted offer",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

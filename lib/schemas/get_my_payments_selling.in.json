@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "page": {
+            "required": false,
+            "type": "integer",
+            "default": 1
+        },
+        "per_page": {
+            "required": false,
+            "type": "integer",
+            "default": 24
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        },
+        "created_start_date": {
+            "required": false,
+            "type": "string"
+        },
+        "created_end_date": {
+            "required": false,
+            "type": "string"
+        },
+        "updated_start_date": {
+            "required": false,
+            "type": "string"
+        },
+        "updated_end_date": {
+            "required": false,
+            "type": "string"
+        },
+        "order_id": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

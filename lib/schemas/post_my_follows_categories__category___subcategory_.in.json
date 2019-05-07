@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "required": true,
+            "type": "string"
+        },
+        "subcategory": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

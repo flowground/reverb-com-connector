@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": false,
+            "type": "string"
+        },
+        "slug": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

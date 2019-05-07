@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "category_uuids": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "category_uuids"
+            ],
+            "type": "object"
+        }
+    }
+}

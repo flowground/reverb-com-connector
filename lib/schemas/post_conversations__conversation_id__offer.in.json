@@ -1,0 +1,111 @@
+{
+    "type": "object",
+    "properties": {
+        "conversation_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "country_code": {
+                    "type": "string"
+                },
+                "layaway_terms_slug": {
+                    "type": "string"
+                },
+                "message": {
+                    "description": "Message to include with counter offer",
+                    "type": "string"
+                },
+                "offer_items": {
+                    "items": {
+                        "properties": {
+                            "listing_id": {
+                                "type": "string"
+                            },
+                            "price": {
+                                "type": "string"
+                            },
+                            "shipping_price": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "price",
+                            "shipping_price",
+                            "listing_id"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "price": {
+                    "properties": {
+                        "amount": {
+                            "description": "The amount of money being expressed, as a POSIX-compliant decimal number",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "The currency the money will be expressed in",
+                            "enum": [
+                                "USD",
+                                "CAD",
+                                "EUR",
+                                "GBP",
+                                "AUD",
+                                "JPY",
+                                "NZD",
+                                "MXN"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "amount",
+                        "currency"
+                    ],
+                    "type": "object"
+                },
+                "quantity": {
+                    "type": "string"
+                },
+                "recipient_id": {
+                    "description": "ID of the recipient of the offer. Required if you are the seller pushing an offer to a buyer.",
+                    "type": "string"
+                },
+                "region_code": {
+                    "type": "string"
+                },
+                "shipping_price": {
+                    "description": "Shipping price (sellers only)",
+                    "properties": {
+                        "amount": {
+                            "description": "The amount of money being expressed, as a POSIX-compliant decimal number",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "The currency the money will be expressed in",
+                            "enum": [
+                                "USD",
+                                "CAD",
+                                "EUR",
+                                "GBP",
+                                "AUD",
+                                "JPY",
+                                "NZD",
+                                "MXN"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "amount",
+                        "currency"
+                    ],
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

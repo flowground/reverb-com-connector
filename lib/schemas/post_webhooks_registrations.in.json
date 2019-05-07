@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "topic": {
+                    "description": "Valid values: listings/update, listings/publish, listings/bumps-ran-out, orders/create, orders/update, payments/create, payments/update, app/uninstalled",
+                    "enum": [
+                        "listings/update",
+                        "listings/publish",
+                        "listings/bumps-ran-out",
+                        "orders/create",
+                        "orders/update",
+                        "payments/create",
+                        "payments/update",
+                        "app/uninstalled"
+                    ],
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "url",
+                "topic"
+            ],
+            "type": "object"
+        }
+    }
+}

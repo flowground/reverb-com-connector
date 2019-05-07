@@ -1,0 +1,146 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "auction_price_max": {
+            "required": false,
+            "type": "number",
+            "format": "float"
+        },
+        "category": {
+            "required": false,
+            "type": "string"
+        },
+        "product_type": {
+            "required": false,
+            "type": "string"
+        },
+        "conditions": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "decade": {
+            "required": false,
+            "type": "string"
+        },
+        "finish": {
+            "required": false,
+            "type": "string"
+        },
+        "handmade": {
+            "required": false,
+            "type": "boolean"
+        },
+        "item_city": {
+            "required": false,
+            "type": "string"
+        },
+        "item_country": {
+            "required": false,
+            "type": "string"
+        },
+        "item_region": {
+            "required": false,
+            "type": "string"
+        },
+        "item_state": {
+            "required": false,
+            "type": "string"
+        },
+        "make": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "model": {
+            "required": false,
+            "type": "string"
+        },
+        "must_not": {
+            "required": false,
+            "type": "string"
+        },
+        "price_max": {
+            "required": false,
+            "type": "number",
+            "format": "float"
+        },
+        "price_min": {
+            "required": false,
+            "type": "number",
+            "format": "float"
+        },
+        "currency": {
+            "required": false,
+            "type": "string"
+        },
+        "year_max": {
+            "required": false,
+            "type": "integer"
+        },
+        "year_min": {
+            "required": false,
+            "type": "integer"
+        },
+        "accepts_gift_cards": {
+            "required": false,
+            "type": "boolean"
+        },
+        "preferred_seller": {
+            "required": false,
+            "type": "boolean"
+        },
+        "shop": {
+            "required": false,
+            "type": "string"
+        },
+        "shop_id": {
+            "required": false,
+            "type": "string"
+        },
+        "listing_type": {
+            "required": false,
+            "type": "string"
+        },
+        "ships_to": {
+            "required": false,
+            "type": "string"
+        },
+        "exclude_auctions": {
+            "required": false,
+            "type": "boolean"
+        },
+        "accepts_payment_plans": {
+            "required": false,
+            "type": "boolean"
+        },
+        "watchers_count_min": {
+            "required": false,
+            "type": "integer"
+        },
+        "not_ids": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "state": {
+            "required": false,
+            "type": "string",
+            "default": "live"
+        },
+        "sku": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

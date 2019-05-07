@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "currency": {
+                    "description": "The currency preference for the account",
+                    "type": "string"
+                },
+                "first_name": {
+                    "description": "The first name of the account holder",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "The last name of the account holder",
+                    "type": "string"
+                },
+                "locale_code": {
+                    "description": "The locale code for the account",
+                    "type": "string"
+                },
+                "shipping_region_code": {
+                    "description": "The shipping region preference for the account",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

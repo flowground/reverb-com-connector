@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "slug": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "reason": {
+                    "description": "Valid reasons: 'Sexuality/nudity', 'Hateful or inappropriate speech', 'Item not as described or potential fraud', 'Trademark infringement', 'Other'",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "reason"
+            ],
+            "type": "object"
+        }
+    }
+}

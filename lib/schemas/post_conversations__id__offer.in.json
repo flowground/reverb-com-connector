@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "message": {
+                    "description": "Message to include with counter offer",
+                    "type": "string"
+                },
+                "price": {
+                    "description": "Offer price",
+                    "type": "string"
+                },
+                "shipping_price": {
+                    "description": "Shipping price (sellers only)",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "price"
+            ],
+            "type": "object"
+        }
+    }
+}

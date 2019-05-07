@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "search": {
+            "required": false,
+            "type": "string"
+        },
+        "unread_only": {
+            "required": false,
+            "type": "boolean"
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "default": 1
+        },
+        "per_page": {
+            "required": false,
+            "type": "integer",
+            "default": 24
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        }
+    }
+}

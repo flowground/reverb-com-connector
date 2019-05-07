@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "listing_id": {
+            "required": true,
+            "type": "string"
+        },
+        "for_seller": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}
